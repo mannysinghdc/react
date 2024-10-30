@@ -18,7 +18,15 @@ const Header = () => {
     //custom start
     const pages = ['Home', "About", "Contact"];
     const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+
+    //Logout functionility
+    const logoutHanlder=(route)=>{
+        if(route==="Logout"){
+            localStorage.removeItem("login")
+            navigate("/")
+        }
+    }
     //custom end
     const [anchorElNav, setAnchorElNav] = useState(null)
     const [anchorElUser, setAnchorElUser] = useState(null)
@@ -151,7 +159,7 @@ const Header = () => {
                         >
                             {settings.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
+                                    <Typography sx={{ textAlign: 'center' }} onClick={()=>logoutHanlder(setting)}>{setting}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>

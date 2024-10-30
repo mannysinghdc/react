@@ -19,7 +19,7 @@ const actions = [
     { icon: <HomeIcon />, name: 'Home' },
 ];
 
-const Dial = ({ height=100 }) => {
+const Dial = ({ height = 100 }) => {
     const navigate = useNavigate()
     const { pathname } = useLocation()
 
@@ -32,7 +32,7 @@ const Dial = ({ height=100 }) => {
         }
     }
 
-    //Height adjustment of dial in social cmpt
+    //Height adjustment of dial in social and foodweb cmpt
     const setHeight = () => {
         let val;
 
@@ -42,6 +42,8 @@ const Dial = ({ height=100 }) => {
             val = height.h2
         } else if (pathname === "/social/create") {
             val = height.h3
+        } else if (pathname === "/foodweb") {         // used in foodweb
+            val = height.h1
         }
         else {
             console.log("Pathname not matched");

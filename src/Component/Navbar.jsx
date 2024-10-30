@@ -57,6 +57,9 @@ const Navbar = () => {
                                     }} onClick={() => setFlag(false)}>Home</NavLink>
                                 </li>
                                 <li className="nav-item">
+                                    <NavLink className="nav-link" to="/accordion" style={({ isActive }) => isActive === true ? { color: "red" } : null}>Accordion</NavLink>
+                                </li>
+                                <li className="nav-item">
                                     <NavLink className="nav-link" to="/clock" style={({ isActive }) => isActive === true ? { color: "red" } : null}>Clock</NavLink>
                                 </li>
                                 <li className="nav-item">

@@ -8,6 +8,10 @@ import Dial from "../Dial";
 
 
 const FooterFood = () => {
+    // height object of dial on diff route of Foodweb
+    const ht = {
+        h1: 335
+    }
     return (
         <>
             <Box sx={{ textAlign: "center", bgcolor: 'gray', color: "white", p: 3 }}>
@@ -19,7 +23,7 @@ const FooterFood = () => {
                 </Box>
                 <p>All right reserved &copy; 2024 Tasty_Food </p>
             </Box>
-            <Dial/>
+            <Dial height={ht} />
         </>
     )
 }

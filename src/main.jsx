@@ -27,6 +27,8 @@ import Login from './Component/LoginFuc/Login.jsx';
 import SignUp from './Component/LoginFuc/SignUp.jsx';
 import Profile from './Component/Profile.jsx/Profile.jsx';
 import ProtectRoute from './Component/ProtectRoute/ProtectRoute.jsx';
+import Accordion from './Component/Accordion/Accordion.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: '/',                                              //Home
         element: <ProtectRoute><Home /></ProtectRoute>
+      },
+      {
+        path: 'accordion',                                              //Accordion
+        element: <ProtectRoute><Accordion/></ProtectRoute>
       },
       {
         path: 'color',                                          //Color
