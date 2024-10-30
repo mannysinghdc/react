@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"   // Color changer by npm pakage react-helmet-async
+import { useContext, useEffect, useState } from "react"   // Color Bg changer by npm pakage react-helmet-async
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { MDBBtn } from 'mdb-react-ui-kit';
 import { Outlet, useNavigate } from "react-router-dom";
@@ -20,13 +20,14 @@ const Color = () => {
 
     useEffect(() => {
         document.title = "Color" //Title
+        
+
     }, [flag])
     return (
         <>
 
             {
                 !flag && <HelmetProvider>
-                    <p className="text-center">color1</p>
                     <div className="application">
                         <Helmet>
                             <style>{`body { background-color: ${bg}}`}</style>
@@ -47,11 +48,6 @@ const Color = () => {
                     </div>
                 </HelmetProvider>
             }
-
-            {/* {
-                flag && <Outlet />
-            } */}
-
         </>
     )
 }

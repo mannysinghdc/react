@@ -5,11 +5,17 @@ import Dial from "../FoodWeb/Dial"
 
 
 const Social = () => {
+    // height object of dial on diff route of Social
+    const ht = {
+        h1: 500,
+        h2: 450,
+        h3: 50
+    }
     return (
         <MediaContextProvider>
             <Header />
             <Outlet />
-            <Dial height={500}/>
+            <Dial height={ht} />
         </MediaContextProvider>
     )
 }

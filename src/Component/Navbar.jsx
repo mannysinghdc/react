@@ -11,9 +11,13 @@ const Navbar = () => {
     const login = JSON.parse(localStorage.getItem("login"))
     const loggedUser = JSON.parse(localStorage.getItem("user"))  // localStorge user value
 
+
+
     //Color navigate function
     const colorHanlder = () => {
         setFlag(false)
+        const bodyElm = document.querySelector("body")
+        bodyElm.style.backgroundColor = ""
 
     }
 
@@ -59,17 +63,17 @@ const Navbar = () => {
                                     <NavLink className="nav-link" to="/curd" style={({ isActive }) => isActive === true ? { color: "red" } : null}>Curd</NavLink>
                                 </li>
                                 <li className="nav-item">
+                                    {/* Color Button */}
                                     <NavLink className="nav-link" to="/color" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder} >Color</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/foodweb" style={({ isActive }) => isActive === true ? { color: "red" } : null}>Foodweb</NavLink>
+                                    <NavLink className="nav-link" to="/foodweb">Foodweb</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/todo" style={({ isActive }) => isActive === true ? { color: "red" } : null}>Todo</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/social" style={({ isActive }) => isActive === true ? { color: "red" } : null}
-                                        onClick={() => setShowCmpt("social")}>Social</NavLink>
+                                    <NavLink className="nav-link" to="/social">Social</NavLink>
                                 </li>
 
                             </ul>
@@ -79,7 +83,7 @@ const Navbar = () => {
                                         Action
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><Link className="dropdown-item" to="#" style={{color:"red"}}>{capitalizeFirstLetter(loggedUser.name)}</Link></li>
+                                        <li><Link className="dropdown-item" to="#" style={{ color: "red" }}>{capitalizeFirstLetter(loggedUser.name)}</Link></li>
                                         <li><Link className="dropdown-item" to="/Profile">Profile</Link></li>
                                         <li><hr className="dropdown-divider" /></li>
                                         <li><Link className="dropdown-item" to="/login" onClick={clearLogout}>Logout</Link></li>

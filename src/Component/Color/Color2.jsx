@@ -1,5 +1,5 @@
-import { useContext, useState, useEffect } from "react"  // Color changer by get random number index of given color arrary
-import { useNavigate } from "react-router-dom"
+import { useContext, useState, useEffect } from "react"  // Color Bg changer by get random number index of given color Array
+import { useLocation, useNavigate } from "react-router-dom"
 import { MDBBtn } from 'mdb-react-ui-kit';
 import { ColorContext } from "../../store/Color-Item";
 
@@ -7,6 +7,7 @@ import { ColorContext } from "../../store/Color-Item";
 const Color2 = () => {
     const [bg, setBg] = useState("")
     const navigate = useNavigate()
+   const {pathname}= useLocation()
     const { flag, setFlag } = useContext(ColorContext)
     const colorArr = ["red", 'yellow', 'pink', 'olive', 'orange', 'aqua', 'red', 'black', 'blue', 'violet', 'Lime']
 
@@ -24,14 +25,16 @@ const Color2 = () => {
 
     useEffect(() => {
         document.title = "Color2" //Title
+        if(pathname =='/color/color2'){
+            setFlag(true)
+        }
     }, [flag])
 
     return (
         <>
-            <p className="text-center">color2</p>
             <div style={{ backgroundColor: bg, height: "90vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
 
-                {/* Color cmpt navigation */}
+                {/* Color cmpt navigation and font awosome icon used here */}
                 <span title="Color" style={{ color: 'gray', cursor: "pointer", fontSize: "20px", position: "fixed", top: "70px", left: "15px" }} onClick={() => { navigate('/color'), setFlag(false) }}><i className="fa-solid fa-droplet"></i></span>
                 <MDBBtn rounded className="btn btn-primary btn-sm" onClick={randomColor} onDoubleClick={doubleHandler}>{bg ? bg : "Color"}</MDBBtn>
 

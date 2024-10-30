@@ -8,7 +8,7 @@ import SaveIcon from '@mui/icons-material/Save';
 import PrintIcon from '@mui/icons-material/Print';
 import ShareIcon from '@mui/icons-material/Share'
 import HomeIcon from '@mui/icons-material/Home';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const actions = [
@@ -19,16 +19,41 @@ const actions = [
     { icon: <HomeIcon />, name: 'Home' },
 ];
 
-const Dial = ({height=100}) => {
+const Dial = ({ height }) => {
     const navigate = useNavigate()
+    const { pathname } = useLocation()
+
+    //    social
+
 
     const actionHanlder = (route) => {     // naviagte to home page
         if (route == "Home") {
             navigate("/")
         }
     }
+
+    //Height adjustment of dial in social cmpt
+    const setHeight = () => {
+        let val;
+
+        if (pathname === "/social") {
+            val = height.h1
+        } else if (pathname === "/social/home") {
+            val = height.h2
+        } else if (pathname === "/social/create") {
+            val = height.h3
+        }
+        else {
+            console.log("Pathname not matched");
+            val = height.default;  // Optional: Handle unmatched paths if needed
+        }
+
+        return val; // Return the value if you need to use it outside
+    };
+
+
     return (
-        <Box sx={{ height: {height}, transform: 'translateZ(0px)', flexGrow: 1 }}>
+        <Box sx={{ height: setHeight, transform: 'translateZ(0px)', flexGrow: 1 }}>
             <SpeedDial
                 ariaLabel="SpeedDial basic example"
                 sx={{ position: 'absolute', bottom: 16, right: 16 }}

@@ -6,27 +6,27 @@ import { MDBBtn } from 'mdb-react-ui-kit'
 
 const Color3 = () => {
     const [bg, setBg] = useState("")
-    let location = useLocation();
+    let {pathname} = useLocation()
     const { flag, setFlag } = useContext(ColorContext)
     const bodyElm = document.querySelector("body")
-  
 
-    const colorArr = ["red", 'yellow', 'pink', 'olive', 'orange']
+
+    const colorArr = ["red", 'yellow', 'pink', 'olive', 'orange',"green"]
 
     useEffect(() => {
-        if (location.pathname == "/color/color3") {
+        if (pathname == "/color/color3") {
             bodyElm.style.backgroundColor = bg
+            setFlag(true)
         }
-        if(location.pathname == "/"){
-            bodyElm.style.backgroundColor = ""
-        }
+        // if (pathname == "/color") {
+        //     bodyElm.style.backgroundColor = ""
+        // }
 
 
-    }, [bg,flag])
+    }, [bg, flag])
 
     return (
         <>
-            <p className="text-center">color3</p>
             {/* Button */}
             <div style={{ textAlign: "center", marginTop: "20px" }}>
                 {
