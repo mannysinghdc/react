@@ -19,7 +19,7 @@ const actions = [
     { icon: <HomeIcon />, name: 'Home' },
 ];
 
-const Dial = ({ height }) => {
+const Dial = ({ height=100 }) => {
     const navigate = useNavigate()
     const { pathname } = useLocation()
 
