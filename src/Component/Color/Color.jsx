@@ -33,16 +33,16 @@ const Color = () => {
                             <style>{`body { background-color: ${bg}}`}</style>
                         </Helmet>
                         {/* Color 2 cmpt navigation and font awosome icon used here */}
-                        <span title="Color2" style={{ color: 'gray', cursor: "pointer", fontSize: "20px", position: "fixed", top: "70px", left: "15px" }} onClick={() => color2Hnalder('/color/color2')}><i className="fa-solid fa-palette"></i></span>
+                        <span title="Color2" style={{ color: 'gray', cursor: "pointer", fontSize: "20px", position: "fixed", top: "80px", left: "15px" }} onClick={() => color2Hnalder('/color/color2')}><i className="fa-solid fa-palette"></i></span>
                         {/* Color 3 cmpt navigation */}
-                        <span title="Color3" style={{ color: 'gray', cursor: "pointer", fontSize: "20px", position: "fixed", top: "70px", left: "45px" }} onClick={() => color2Hnalder('/color/color3')} ><i className="fa-solid fa-droplet"></i></span>
+                        <span title="Color3" style={{ color: 'gray', cursor: "pointer", fontSize: "20px", position: "fixed", top: "80px", left: "45px" }} onClick={() => color2Hnalder('/color/color3')} ><i className="fa-solid fa-droplet"></i></span>
 
                     </div>
                     {/* Button */}
                     <div style={{ textAlign: "center", marginTop: "20px" }}>
                         {
                             colorArr.map((item, i) => (
-                                <MDBBtn key={i} rounded className="mx-1" onClick={() => setBg(item)}>{item}</MDBBtn>
+                                <MDBBtn key={i} rounded className="mx-1 my-1" onClick={() => setBg(item)}>{item}</MDBBtn>
                             ))
                         }
                     </div>

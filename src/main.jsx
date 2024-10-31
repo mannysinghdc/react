@@ -125,7 +125,7 @@ const router = createBrowserRouter([
         element: <SignUp />
       },
       {
-        path: 'profile',                                           //SingUp
+        path: 'profile',                                           //Profile
         element: <ProtectRoute><Profile /></ProtectRoute>
       }
     ]
