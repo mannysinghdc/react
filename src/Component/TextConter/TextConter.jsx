@@ -1,16 +1,19 @@
-import { MDBTextArea, MDBBtn } from 'mdb-react-ui-kit';
-import { useContext, useState } from 'react'
+import { MDBTextArea } from 'mdb-react-ui-kit';
+import { useContext, useEffect } from 'react'
 import Alert from './Alert';
-import BgButton from './BgButton';
-import { TextCounterContext } from '../../../store/Text-Coounter-Item';
+import BgButton from './BgButton'
 import TextButton from './TextButton';
+import { TextCounterContext } from '../../store/Text-Coounter-Item';
 
 const TextConter = () => {
 
     const { text, setText, mode } = useContext(TextCounterContext)
 
     //Title 
-    document.title = "Text Counter"
+    useEffect(() => {
+        document.title = "Text Counter"
+    },[])
+
     return (
         <>
             <Alert />
@@ -22,7 +25,6 @@ const TextConter = () => {
 
                     <TextButton />
                 </div>
-
             </div>
         </>
     )

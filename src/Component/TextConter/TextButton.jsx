@@ -1,10 +1,10 @@
 import { MDBBtn } from 'mdb-react-ui-kit';
 import { useContext } from 'react'
-import { TextCounterContext } from '../../../store/Text-Coounter-Item';
+import { TextCounterContext } from '../../store/Text-Coounter-Item';
 
 const TextButton = () => {
     const { text, setText,showAlert } = useContext(TextCounterContext)
-console.log(text)
+
 
     //This is for display 0 word at initail state
     const newText = text.split(/\s+/)    // Regular expression used here***********

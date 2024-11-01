@@ -28,6 +28,8 @@ import SignUp from './Component/LoginFuc/SignUp.jsx';
 import Profile from './Component/Profile.jsx/Profile.jsx';
 import ProtectRoute from './Component/ProtectRoute/ProtectRoute.jsx';
 import Accordion from './Component/Accordion/Accordion.jsx';
+import TextConter from './Component/TextConter/TextConter.jsx';
+import TextCounterContextProvider from './store/Text-Coounter-Item.jsx';
 
 
 const router = createBrowserRouter([
@@ -46,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'accordion',                                              //Accordion
-        element: <ProtectRoute><Accordion/></ProtectRoute>
+        element: <ProtectRoute><Accordion /></ProtectRoute>
       },
       {
         path: 'color',                                          //Color
@@ -114,7 +116,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/todo',                                            //Todo
-        element: <Todo />
+        element: <ProtectRoute><Todo /></ProtectRoute>
+      },
+      {
+        path: '/textcounter',                                            //Todo
+        element: <ProtectRoute><TextConter /></ProtectRoute>
       },
       {
         path: 'login',                                           //Login
@@ -135,8 +141,10 @@ const router = createBrowserRouter([
 // Color Context use Show child cmpt of color , social, foodweb 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ColorContextProvider>
-      <RouterProvider router={router} />
-    </ColorContextProvider>
+    <TextCounterContextProvider>
+      <ColorContextProvider>
+        <RouterProvider router={router} />
+      </ColorContextProvider>
+    </TextCounterContextProvider>
   </StrictMode>
 )

@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { TextCounterContext } from "../../../store/Text-Coounter-Item";
+import { useContext } from "react"
+import { TextCounterContext } from "../../store/Text-Coounter-Item";
 
 const Alert = () => {
     const { alert } = useContext(TextCounterContext)
