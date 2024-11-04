@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { ColorContext } from "../store/Color-Item"
 import DrawerCmpt from "./DrawerCmpt"
@@ -31,6 +31,7 @@ const Navbar = () => {
         return String(word).charAt(0).toUpperCase() + String(word).slice(1)
     }
 
+
     return (
         <>
             <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "#cbf8f8" }}>
@@ -40,43 +41,37 @@ const Navbar = () => {
                     <Link className="navbar-brand" to="/">
                         <img src="/project.webp" className="rounded" alt="image" height={30} />
                     </Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    {login && <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
-                    </button>
+                    </button>}
 
                     {
                         login ? <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" aria-current="page" to="/" style={({ isActive }) => {
-                                        if (isActive) {
-                                            return { color: "red" }
-                                        } else {
-                                            return {}
-                                        }
-                                    }} onClick={() => setFlag(false)}>Home</NavLink>
+                                    <NavLink className="nav-link" aria-current="page" to="/" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder} >Home</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/accordion" style={({ isActive }) => isActive === true ? { color: "red" } : null}>Accordion</NavLink>
+                                    <NavLink className="nav-link" to="/accordion" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder}>Accordion</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/clock" style={({ isActive }) => isActive === true ? { color: "red" } : null}>Clock</NavLink>
+                                    <NavLink className="nav-link" to="/clock" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder}>Clock</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/curd" style={({ isActive }) => isActive === true ? { color: "red" } : null}>Curd</NavLink>
+                                    <NavLink className="nav-link" to="/curd" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder}>Curd</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     {/* Color Button */}
                                     <NavLink className="nav-link" to="/color" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder} >Color</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/foodweb">Foodweb</NavLink>
+                                    <NavLink className="nav-link" to="/foodweb" onClick={colorHanlder}>Foodweb</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/todo" style={({ isActive }) => isActive === true ? { color: "red" } : null}>Todo</NavLink>
+                                    <NavLink className="nav-link" to="/todo" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder}>Todo</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/social">Social</NavLink>
+                                    <NavLink className="nav-link" to="/social" onClick={colorHanlder}>Social</NavLink>
                                 </li>
 
                             </ul>

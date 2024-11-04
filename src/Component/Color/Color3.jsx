@@ -12,7 +12,7 @@ const Color3 = () => {
 
 
     const colorArr = ["red", 'yellow', 'pink', 'olive', 'orange',"green"]
-    console.log(flag)
+
     useEffect(() => {
         console.log(flag)
         if (pathname == "/color/color3") {
@@ -21,7 +21,6 @@ const Color3 = () => {
         }
         // if (pathname == "/color") {
         //     bodyElm.style.backgroundColor = ""
-        // setFlag(true)
         // }
 
 
