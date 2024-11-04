@@ -71,6 +71,9 @@ const Navbar = () => {
                                     <NavLink className="nav-link" to="/todo" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder}>Todo</NavLink>
                                 </li>
                                 <li className="nav-item">
+                                    <NavLink className="nav-link" to="/room" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder}>LiveChat</NavLink>
+                                </li>
+                                <li className="nav-item">
                                     <NavLink className="nav-link" to="/social" onClick={colorHanlder}>Social</NavLink>
                                 </li>
 

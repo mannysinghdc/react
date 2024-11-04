@@ -30,6 +30,8 @@ import ProtectRoute from './Component/ProtectRoute/ProtectRoute.jsx';
 import Accordion from './Component/Accordion/Accordion.jsx';
 import TextConter from './Component/TextConter/TextConter.jsx';
 import TextCounterContextProvider from './store/Text-Coounter-Item.jsx';
+import Live from './Component/LiveChat/Live.jsx';
+import RoomLive from './Component/LiveChat/RoomLive.jsx';
 
 
 const router = createBrowserRouter([
@@ -94,6 +96,17 @@ const router = createBrowserRouter([
           },
 
         ]
+      },
+      {
+        path: '/room',                                         //LiveRoom
+        element: <ProtectRoute><Live /></ProtectRoute>,
+        children: [
+          {
+            path: '/room/:roomId',
+            element: <RoomLive />
+          }
+        ]
+
       },
       {
         path: '/social',                                         //Social
