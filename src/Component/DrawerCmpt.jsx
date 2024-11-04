@@ -5,10 +5,10 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu'
-import { useContext, useEffect, useState } from 'react';
+import ListItemText from '@mui/material/ListItemText'
+import { useState } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
+import ToggleOffIcon from '@mui/icons-material/ToggleOff';
 
 
 const DrawerCmpt = () => {
@@ -62,7 +62,8 @@ const DrawerCmpt = () => {
 
   return (
     <>
-      <MenuIcon onClick={toggleDrawer(true)} color="action" style={{ marginInline: "10px" }} />
+    <ToggleOffIcon onClick={toggleDrawer(true)} color="action" style={{ marginInline: "10px", cursor:"pointer" }}/>
+  
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
