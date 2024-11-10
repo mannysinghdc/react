@@ -18,8 +18,8 @@
     "@zegocloud/zego-uikit-prebuilt": "^2.12.0",
     "axios": "^1.7.7",
     "mdb-react-ui-kit": "^9.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.0.0-rc-5c56b873-20241107",
+    "react-dom": "^19.0.0-rc-5c56b873-20241107",
     "react-helmet-async": "^2.0.5",
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.27.0"
