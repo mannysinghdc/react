@@ -46,7 +46,7 @@ const Dial = ({ height = 100 }) => {
             val = height.h1
         }
         else {
-            console.log("Pathname not matched");
+            // console.log("Pathname not matched");
             val = height.default;  // Optional: Handle unmatched paths if needed
         }
 

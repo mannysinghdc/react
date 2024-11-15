@@ -12,7 +12,7 @@ const FoodList = () => {
             <MDBListGroup style={{ minWidth: '22rem' }} light small>
                 {
                     food.map((item, i) => (
-                        <FoodItem key={i} item={item} />
+                        <FoodItem key={i} item={item} checked={item.checked} />
                     ))
                 }
             </MDBListGroup>
