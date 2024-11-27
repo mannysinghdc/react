@@ -49,7 +49,8 @@ const Navbar = () => {
                         login ? <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" aria-current="page" to="/" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder} >Home</NavLink>
+                                    {/* diff way to style only this */}
+                                    <NavLink className="nav-link" aria-current="page" to="/" style={({ isActive }) => {return {color: isActive ?"red":null}}} onClick={colorHanlder} >Home</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/accordion" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder}>Accordion</NavLink>

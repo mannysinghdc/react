@@ -1,3 +1,8 @@
+/* Apply border-box to all elements */
+* {
+  box-sizing: border-box;
+}
+
 body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
   }
