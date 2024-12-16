@@ -32,6 +32,7 @@ import TextConter from './Component/TextConter/TextConter.jsx';
 import TextCounterContextProvider from './store/Text-Coounter-Item.jsx';
 import Live from './Component/LiveChat/Live.jsx';
 import RoomLive from './Component/LiveChat/RoomLive.jsx';
+import Calculator from './Component/Calculator/Calculator.jsx';
 
 
 const router = createBrowserRouter([
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: 'clock',                                          //Clock
         element: <ProtectRoute><Clock /></ProtectRoute>
+      },
+      {
+        path: 'calculator',                                          //Clock
+        element: <ProtectRoute><Calculator /></ProtectRoute>
       },
       {
         path: 'curd',                                          //Curd

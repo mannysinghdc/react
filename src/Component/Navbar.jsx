@@ -59,6 +59,9 @@ const Navbar = () => {
                                     <NavLink className="nav-link" to="/clock" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder}>Clock</NavLink>
                                 </li>
                                 <li className="nav-item">
+                                    <NavLink className="nav-link" to="/calculator" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder}>Calculator</NavLink>
+                                </li>
+                                <li className="nav-item">
                                     <NavLink className="nav-link" to="/curd" style={({ isActive }) => isActive === true ? { color: "red" } : null} onClick={colorHanlder}>Curd</NavLink>
                                 </li>
                                 <li className="nav-item">

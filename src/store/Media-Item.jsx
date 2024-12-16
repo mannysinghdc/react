@@ -29,7 +29,6 @@ const MediaContextProvider = ({ children }) => {
                 setPost(deletePostItem)
             }
         }
-
     }, [post])
 
     //Fetch post from api
