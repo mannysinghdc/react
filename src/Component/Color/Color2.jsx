@@ -7,14 +7,17 @@ import { ColorContext } from "../../store/Color-Item";
 const Color2 = () => {
     const [bg, setBg] = useState("")
     const navigate = useNavigate()
-   const {pathname}= useLocation()
+    const { pathname } = useLocation()
     const { flag, setFlag } = useContext(ColorContext)
+
     const colorArr = ["red", 'yellow', 'pink', 'olive', 'orange', 'aqua', 'red', 'black', 'blue', 'violet', 'Lime']
 
     //Random color pick function
     const randomColor = () => {
-        const index = Math.floor(Math.random() * colorArr.length)
-        setBg(colorArr[index])
+          // Filter out the current color to avoid repetition
+          const availableColors = colorArr.filter(c => c !== bg);
+          const index = Math.floor(Math.random() * availableColors.length)
+          setBg(colorArr[index])
     }
 
     //Color remove on doubleclick function
@@ -25,7 +28,7 @@ const Color2 = () => {
 
     useEffect(() => {
         document.title = "Color2" //Title
-        if(pathname =='/color/color2'){
+        if (pathname == '/color/color2') {
             setFlag(true)
         }
     }, [flag])

@@ -13,8 +13,7 @@ import NotFoundPage from './Component/404.jsx';
 import Color from './Component/Color/Color.jsx';
 import ColorContextProvider from './store/Color-Item.jsx';
 import Color2 from './Component/Color/Color2.jsx';
-import Color3 from './Component/Color/Color3.jsx';
-import FoodWeb from './Component/FoodWeb/FoodWeb.jsx';
+import Color3 from './Component/Color/Color3.jsx'
 import AboutFood from './Component/FoodWeb/Pages/AboutFood.jsx';
 import HomeFood from './Component/FoodWeb/Pages/HomeFood.jsx';
 import ContactFood from './Component/FoodWeb/Pages/ContactFood.jsx';
@@ -33,6 +32,7 @@ import TextCounterContextProvider from './store/Text-Coounter-Item.jsx';
 import Live from './Component/LiveChat/Live.jsx';
 import RoomLive from './Component/LiveChat/RoomLive.jsx';
 import Calculator from './Component/Calculator/Calculator.jsx';
+import Rating from './Component/Rating/Rating.jsx';
 
 
 const router = createBrowserRouter([
@@ -151,6 +151,10 @@ const router = createBrowserRouter([
       {
         path: 'profile',                                           //Profile
         element: <ProtectRoute><Profile /></ProtectRoute>
+      },
+      {
+        path: 'rating',                                           //Rating
+        element: <ProtectRoute><Rating /></ProtectRoute>
       }
     ]
   },

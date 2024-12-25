@@ -3,7 +3,7 @@ import { MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit'
 import { CurdContext } from '../../store/Curd-Item';
 
 const Read = () => {
-    const { data ,editHandler,deleteHandler} = useContext(CurdContext)
+    const { data ,deleteHandler,editHandler} = useContext(CurdContext)
     return (
         <>
             {
@@ -47,15 +47,12 @@ const Read = () => {
                                         </tr>
                                     ))
                                 }
-
-
                             </MDBTableBody>
                         </MDBTable>
                     </div>
             }
         </>
-
-    );
+    )
 }
 
 export default Read

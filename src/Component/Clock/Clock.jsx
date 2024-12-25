@@ -22,7 +22,6 @@ const Clock = () => {
         return () => {
             clearInterval(timer)
             // clear timer when component unmouts
-            console.log("Clean up...")
         }
     }, [])
 

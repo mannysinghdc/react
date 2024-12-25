@@ -17,7 +17,7 @@
 
 .div_main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 buttons per row */
+    grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
     gap: 10px
 }
 

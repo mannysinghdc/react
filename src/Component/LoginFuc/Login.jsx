@@ -6,27 +6,37 @@ const Login = () => {
     const [data, setData] = useState({ email: "", password: "" })
     const navigate = useNavigate()
 
-    //inputHandler or change handler
+    // inputHandler or change handler
     const inputHandle = (e, property) => {
         setData({ ...data, [property]: e.target.value })
     }
 
-     //submit 
-     const submitHandler = (e) => {
+
+
+    //submit 
+    const submitHandler = (e) => {
         e.preventDefault()
 
-        const loggedUser = JSON.parse(localStorage.getItem("user"))
-        
+        //Get user detail from localStorage
+        const loggedUser = JSON.parse(localStorage.getItem("user-info") || "[]")
+        console.log(loggedUser)
+
         if (!data.email || !data.password) {       //Validation
             alert("Please enter valid email and password")
-        } else if (loggedUser === null) {
+        } else if (loggedUser.length === 0) {
             alert("No such email is ragistered!")
-        } else if (data.email === loggedUser.email && data.password === loggedUser.password) {
-            localStorage.setItem("login", true)
-            navigate("/")
-        } else {
-            alert("Wrong email and password")
         }
+
+        loggedUser.map((item) => {
+            if (item.email === data.email && item.password === data.password) {
+                localStorage.setItem("login-user", JSON.stringify({ flag: true, name: item.name }))
+                alert("Login successfully!")
+                navigate("/")
+            } else {
+                alert("Invalid email and password!")
+            }
+        })
+
     }
 
     return (

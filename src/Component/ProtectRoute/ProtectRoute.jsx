@@ -1,11 +1,11 @@
 import { Outlet, Navigate } from "react-router-dom"
 
 const ProtectRoute = ({children}) => {
-    const loggin = localStorage.getItem("login")
+    const login = JSON.parse(localStorage.getItem("login-user" || "{}"))
     return (
         <>
             {children}
-            {loggin ? <Outlet /> : <Navigate to={"/login"} replace={true} />}
+            {login.flag ? <Outlet /> : <Navigate to={"/login"} replace={true} />}
         </>
     )
 }

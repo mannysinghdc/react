@@ -11,16 +11,42 @@ const SignUp = () => {
         setData({ ...data, [property]: e.target.value })
     }
 
-    
+
     //submit  
     const submitHandler = (e) => {
         e.preventDefault()
-        if (!data.name || !data.lastName || !data.email || !data.password) {
-            alert("Please enter all value!")
-        } else {
-            localStorage.setItem("user", JSON.stringify(data))
-            navigate("/login")
+        // Remove whitespace and empty string
+
+        //add new user
+        const addUser = {
+            name: data.name.trim(),
+            lastName: data.lastName.trim(),
+            email: data.email.trim(),
+            password: data.password
         }
+
+        // Validation for empty fields
+        if (!data.name || !data.lastName || !data.email || !data.password) {
+            alert("Please enter details!")
+            return
+        }
+
+        //Get user detail from localStorage
+        const storedUsers = JSON.parse(localStorage.getItem("user-info") || "[]")
+
+        // Validation for duplicates
+        if (storedUsers.some((elm) => elm.email === data.email)) {
+            alert("This email is already registered!")
+            return
+        }
+
+        // Save to localStorage
+        storedUsers.push(addUser)
+
+        // set user detail into local storage
+        localStorage.setItem("user-info", JSON.stringify(storedUsers))
+        alert("Registration successful!")
+        navigate("/login")
 
     }
     return (
