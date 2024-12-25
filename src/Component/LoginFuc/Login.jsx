@@ -19,7 +19,7 @@ const Login = () => {
 
         //Get user detail from localStorage
         const loggedUser = JSON.parse(localStorage.getItem("user-info") || "[]")
-        console.log(loggedUser)
+    
 
         if (!data.email || !data.password) {       //Validation
             alert("Please enter valid email and password")

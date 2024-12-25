@@ -5,7 +5,7 @@ const ProtectRoute = ({children}) => {
     return (
         <>
             {children}
-            {login.flag ? <Outlet /> : <Navigate to={"/login"} replace={true} />}
+            {login?.flag ? <Outlet /> : <Navigate to={"/login"} replace={true} />}
         </>
     )
 }
